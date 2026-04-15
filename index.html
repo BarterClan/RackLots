@@ -476,7 +476,7 @@ async function handleContact(){
   if(!name||!email||!email.includes('@')||!msg){status.style.color='#f87171';status.textContent='Please fill in your name, email, and message.';return;}
   btn.textContent='Sending...';btn.disabled=true;btn.style.background='#888';
   try{
-    const res=await fetch('https://formspree.io/f/mnjlnndr',{
+    const res=await fetch('https://formspree.io/f/YOUR_FORM_ID',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({name,company,email,phone,role:role?role.value:'not specified',message:msg})

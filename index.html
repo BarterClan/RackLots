@@ -5,24 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>racklots.com — B2B Liquidation Marketplace | Buy & Sell Surplus Inventory</title>
 <meta name="description" content="racklots.com is India's trusted B2B liquidation marketplace. Buy and sell surplus, overstock, and excess inventory in bulk."/>
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>racklots.com — B2B Liquidation Marketplace | Buy & Sell Surplus Inventory</title>
-<meta name="description" content="..."/>
-
-<!-- ADD THIS LINE RIGHT HERE ↓ -->
-<meta name="google-site-verification" content="hEE_K20ivh2JnAW7C9WetPBBaytqX9rf--4ZbaG6fPE"/>
-
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://www.racklots.com/"/>
-...
-</head>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://www.racklots.com/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="icon" type="image/png" href="/favicon.png"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230C0C0C'/><rect x='6' y='8' width='3' height='18' rx='1' fill='%23C9A84C'/><rect x='23' y='8' width='3' height='18' rx='1' fill='%23C9A84C'/><rect x='6' y='11' width='20' height='3' rx='1' fill='%23C9A84C'/><rect x='6' y='19' width='20' height='3' rx='1' fill='%23C9A84C'/><rect x='6' y='27' width='20' height='2' rx='1' fill='%23C9A84C' opacity='.5'/></svg>"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -74,6 +61,19 @@ h1 .dim{color:var(--muted)}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:var(--text);padding:0.88rem 2rem;border-radius:8px;font-weight:600;font-size:0.95rem;border:1px solid var(--border2);cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:border-color 0.2s,background 0.2s;white-space:nowrap}
 .btn-ghost:hover{border-color:var(--gold-border);background:var(--gold-dim)}
+/* Dropdown */
+.dropdown-wrap{position:relative;display:inline-block}
+.dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;min-width:220px;z-index:300;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.dropdown-menu.open{display:block}
+.dropdown-label{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:0.8rem 1.2rem 0.4rem;display:block;border-bottom:1px solid var(--border)}
+.dropdown-item{display:flex;align-items:center;gap:12px;padding:0.9rem 1.2rem;cursor:pointer;transition:background 0.15s;text-decoration:none;border-bottom:1px solid var(--border)}
+.dropdown-item:last-child{border-bottom:none}
+.dropdown-item:hover{background:var(--bg3)}
+.dropdown-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.icon-seller{background:rgba(201,168,76,0.12);border:1px solid var(--gold-border)}
+.icon-buyer{background:rgba(255,255,255,0.04);border:1px solid var(--border)}
+.dropdown-item-text strong{display:block;font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:2px}
+.dropdown-item-text span{font-size:0.75rem;color:var(--muted)}
 .hero-visual{margin:0 5%;border-radius:16px;background:var(--bg2);border:1px solid var(--border);height:clamp(200px,40vw,380px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .hero-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.05),transparent 60%)}
 .hero-visual-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:0.4}
@@ -251,7 +251,7 @@ footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)
   <div class="nav-links" id="navLinks">
     <a href="#" onclick="nav(event,'how')">How it works</a>
     <a href="#" onclick="nav(event,'why')">Why us</a>
-    <a href="#" onclick="nav(event,'blog')">Blog</a>
+    <a href="https://www.racklots.com/blog">Blog</a>
     <a href="#" onclick="nav(event,'contact')">Contact</a>
     <a href="#" onclick="nav(event,'signup')" class="nav-outline">Get early access</a>
     <a href="#" onclick="nav(event,'signup')" class="nav-cta">Request access</a>
@@ -263,7 +263,7 @@ footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)
 <div class="mobile-menu" id="mobileMenu">
   <a href="#" onclick="mobileNav(event,'how')">How it works</a>
   <a href="#" onclick="mobileNav(event,'why')">Why us</a>
-  <a href="#" onclick="mobileNav(event,'blog')">Blog</a>
+      <a href="https://www.racklots.com/blog">Blog</a>
   <a href="#" onclick="mobileNav(event,'contact')">Contact</a>
   <a href="#" onclick="mobileNav(event,'signup')">Request access →</a>
 </div>
@@ -359,15 +359,15 @@ footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)
     <h2 class="section-title">The liquidation playbook</h2>
     <p class="section-sub">Practical guides to help you recover more from surplus inventory.</p>
     <div class="blog-grid">
-      <article class="blog-card" onclick="showBlog(1)">
+      <article class="blog-card" onclick="window.location.href='https://www.racklots.com/blog/how-to-price-surplus-inventory'">
         <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=600&q=80" alt="Surplus inventory pallets" style="width:100%;height:150px;object-fit:cover;display:block"/>
         <div class="blog-body"><div class="blog-tag">Guide</div><h3>How to price surplus inventory for maximum recovery</h3><p>Learn the pricing strategies top procurement teams use to recover 40–60% more on liquidation deals.</p><div class="blog-meta"><span>5 min read · Apr 2026</span><span class="read-more">Read →</span></div></div>
       </article>
-      <article class="blog-card" onclick="showBlog(2)">
+      <article class="blog-card" onclick="window.location.href='https://www.racklots.com/blog/why-indian-manufacturers-use-b2b-liquidation'">
         <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&q=80" alt="Manufacturing facility India" style="width:100%;height:150px;object-fit:cover;display:block"/>
         <div class="blog-body"><div class="blog-tag">Industry</div><h3>Why Indian manufacturers are turning to B2B liquidation platforms</h3><p>The shift away from traditional brokers is accelerating. Here's what's driving it — and what it means for you.</p><div class="blog-meta"><span>7 min read · Mar 2026</span><span class="read-more">Read →</span></div></div>
       </article>
-      <article class="blog-card" onclick="showBlog(3)">
+      <article class="blog-card" onclick="window.location.href='https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory'">
         <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="Inventory checklist review" style="width:100%;height:150px;object-fit:cover;display:block"/>
         <div class="blog-body"><div class="blog-tag">Checklist</div><h3>The 10-point checklist before listing bulk inventory</h3><p>Avoid the most common mistakes that slow down deals. Quick checklist for first-time and repeat sellers.</p><div class="blog-meta"><span>4 min read · Mar 2026</span><span class="read-more">Read →</span></div></div>
       </article>
@@ -438,7 +438,7 @@ footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)
       <p class="footer-tagline">India's premier B2B liquidation marketplace. Move surplus inventory fast.</p>
     </div>
     <div class="footer-links-col"><h4>Platform</h4><a href="#" onclick="nav(event,'how')">How it works</a><a href="#" onclick="nav(event,'why')">Why us</a><a href="#" onclick="nav(event,'signup')">Get early access</a></div>
-    <div class="footer-links-col"><h4>Blog</h4><a href="#" onclick="showBlog(1)">Pricing surplus inventory</a><a href="#" onclick="showBlog(2)">B2B liquidation trends</a><a href="#" onclick="showBlog(3)">Listing checklist</a></div>
+    <div class="footer-links-col"><h4>Blog</h4><a href="https://www.racklots.com/blog/how-to-price-surplus-inventory">Pricing surplus inventory</a><a href="https://www.racklots.com/blog/why-indian-manufacturers-use-b2b-liquidation">B2B liquidation trends</a><a href="https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory">Listing checklist</a></div>
     <div class="footer-links-col"><h4>Contact</h4><a href="tel:+918860208288">+91 88602 08288</a><a href="mailto:hello@racklots.com">hello@racklots.com</a><a href="https://wa.me/918860208288" target="_blank">WhatsApp</a></div>
   </div>
   <div class="footer-bottom">

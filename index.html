@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="hEE_K20ivh2JnAW7C9WetPBBaytqX9rf--4ZbaG6fPE"/>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>racklots.com — B2B Liquidation Marketplace | Buy & Sell Surplus Inventory</title>
@@ -24,24 +23,47 @@ html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.95);backdrop-filter:blur(20px);z-index:200}
-.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer}
-.logo-icon{width:34px;height:34px;background:var(--bg3);border:1px solid var(--gold-border);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.logo-text{font-size:1.2rem;font-weight:800;color:var(--white);letter-spacing:-0.3px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.97);backdrop-filter:blur(20px);z-index:200;min-height:62px}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--gold-border);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-text{font-size:1.15rem;font-weight:800;color:var(--white);letter-spacing:-0.3px}
 .logo-text span{color:var(--gold)}
-.logo-text .tld{color:var(--muted);font-weight:600;font-size:1rem}
-.nav-links{display:flex;align-items:center;gap:0.2rem}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;padding:0.4rem 0.7rem;border-radius:6px;transition:color 0.2s,background 0.2s;font-weight:500;white-space:nowrap}
+.logo-text .tld{color:var(--muted);font-weight:600;font-size:0.95rem}
+/* Desktop nav */
+.nav-links{display:flex;align-items:center;gap:0.15rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;padding:0.38rem 0.65rem;border-radius:6px;transition:color 0.2s,background 0.2s;font-weight:500;white-space:nowrap}
 .nav-links a:hover{color:var(--white);background:var(--bg3)}
-.nav-cta{background:var(--gold)!important;color:var(--bg)!important;padding:0.5rem 1.1rem!important;border-radius:7px!important;font-weight:700!important;font-size:0.85rem!important;margin-left:0.3rem}
+.nav-cta{background:var(--gold)!important;color:var(--bg)!important;padding:0.48rem 1rem!important;border-radius:7px!important;font-weight:700!important;font-size:0.82rem!important;margin-left:0.25rem}
 .nav-cta:hover{background:var(--gold2)!important}
-.nav-outline{border:1px solid var(--gold-border)!important;color:var(--gold)!important;padding:0.48rem 1rem!important;border-radius:7px!important;font-weight:600!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
-.hamburger span{width:22px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s}
-.mobile-menu{display:none;position:fixed;top:61px;left:0;right:0;background:rgba(12,12,12,0.98);border-bottom:1px solid var(--border);padding:1rem 5%;flex-direction:column;gap:0.5rem;z-index:199}
-.mobile-menu a{color:var(--muted);text-decoration:none;font-size:0.95rem;padding:0.7rem 0;border-bottom:1px solid var(--border);font-weight:500;display:block}
-.mobile-menu a:last-child{border-bottom:none;margin-top:0.5rem;background:var(--gold);color:var(--bg);text-align:center;border-radius:8px;padding:0.8rem;font-weight:700}
+.nav-outline{border:1px solid var(--gold-border)!important;color:var(--gold)!important;padding:0.46rem 0.9rem!important;border-radius:7px!important;font-weight:600!important}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:1px solid var(--border);border-radius:7px;flex-shrink:0}
+.hamburger span{width:20px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;display:block}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile menu */
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(10,10,14,0.99);backdrop-filter:blur(20px);padding:1.5rem 6%;flex-direction:column;gap:0;z-index:199;overflow-y:auto}
 .mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--text);text-decoration:none;font-size:1rem;padding:1rem 0;border-bottom:1px solid var(--border);font-weight:600;display:flex;align-items:center;justify-content:space-between;transition:color 0.2s}
+.mobile-menu a::after{content:'→';color:var(--muted);font-size:0.85rem}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu a:hover::after{color:var(--gold)}
+.mobile-menu .mob-cta{background:var(--gold);color:var(--bg)!important;border-radius:10px;padding:1rem 1.5rem!important;margin-top:1.2rem;font-weight:700;border-bottom:none!important;font-size:1rem;justify-content:center}
+.mobile-menu .mob-cta::after{display:none}
+.mobile-menu .mob-cta:hover{background:var(--gold2)!important;color:var(--bg)!important}
+.mobile-menu .mob-outline{border:1px solid var(--gold-border)!important;color:var(--gold)!important;border-radius:10px;padding:0.9rem 1.5rem!important;margin-top:0.6rem;font-weight:600;justify-content:center}
+.mobile-menu .mob-outline::after{display:none}
+.mob-divider{font-size:0.62rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);padding:1.4rem 0 0.4rem;display:block}
+/* Hide/show based on screen */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+@media(min-width:901px){
+  .hamburger{display:none}
+  .mobile-menu{display:none!important}
+}
 
 /* PAGES */
 .page{display:none}
@@ -611,10 +633,25 @@ function mobileNav(e,id){
   if(!document.getElementById('page-home').classList.contains('active'))showPage('home');
   setTimeout(()=>scrollTo(id),150);
 }
+function toggleDropdown(){
+  document.getElementById('heroMenu').classList.toggle('open');
+}
+function closeDropdown(){
+  document.getElementById('heroMenu').classList.remove('open');
+}
 function toggleMenu(){
   document.getElementById('mobileMenu').classList.toggle('open');
 }
-function handleSignup(){
+// close mobile menu on outside click
+document.addEventListener('click',e=>{
+  const menu=document.getElementById('mobileMenu');
+  const burger=document.getElementById('hamburger');
+  if(menu&&menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target)){
+    menu.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
   const co=document.getElementById('company').value.trim();
   const em=document.getElementById('email').value.trim();
   const msg=document.getElementById('msg');

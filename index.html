@@ -72,17 +72,23 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:0 5%;h
 .btn-ghost:hover{border-color:var(--goldborder);background:var(--golddim)}
 /* Dropdown */
 .dd-wrap{position:relative;display:inline-block}
-.dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--goldborder);border-radius:10px;overflow:hidden;min-width:230px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.dd-menu{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg2);border:1px solid var(--goldborder);border-radius:14px;overflow:hidden;width:min(320px,90vw);z-index:99999;box-shadow:0 20px 60px rgba(0,0,0,0.8)}
 .dd-menu.is-open{display:block}
-.dd-label{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:0.8rem 1.2rem 0.4rem;display:block;border-bottom:1px solid var(--border)}
-.dd-item{display:flex;align-items:center;gap:12px;padding:0.9rem 1.2rem;cursor:pointer;transition:background 0.15s;text-decoration:none;border-bottom:1px solid var(--border)}
+.dd-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99998;backdrop-filter:blur(4px)}
+.dd-overlay.is-open{display:block}
+.dd-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;border-bottom:1px solid var(--border)}
+.dd-label{font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:block}
+.dd-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.2rem;padding:0;line-height:1;font-family:inherit}
+.dd-close:hover{color:var(--white)}
+.dd-item{display:flex;align-items:center;gap:14px;padding:1.1rem 1.2rem;cursor:pointer;transition:background 0.15s;text-decoration:none;border-bottom:1px solid var(--border)}
 .dd-item:last-child{border-bottom:none}
 .dd-item:hover{background:var(--bg3)}
-.dd-ico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.dd-ico{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0px}
 .dd-ico-s{background:rgba(201,168,76,0.12);border:1px solid var(--goldborder)}
 .dd-ico-b{background:rgba(255,255,255,0.04);border:1px solid var(--border)}
-.dd-txt strong{display:block;font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:2px}
-.dd-txt span{font-size:0.75rem;color:var(--muted)}
+.dd-ico svg{width:20px;height:20px}
+.dd-txt strong{display:block;font-size:0.9rem;font-weight:700;color:var(--white);margin-bottom:3px}
+.dd-txt span{font-size:0.78rem;color:var(--muted);line-height:1.4}
 
 /* ─── HERO VISUAL ─── */
 .hero-visual{margin:0 5%;border-radius:16px;background:var(--bg2);border:1px solid var(--border);height:clamp(200px,35vw,380px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
@@ -267,15 +273,29 @@ footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)
   <div class="hero-btns">
     <div class="dd-wrap" id="ddWrap">
       <button class="btn-gold" id="ddBtn">Get early access ↓</button>
+      <div class="dd-overlay" id="ddOverlay"></div>
       <div class="dd-menu" id="ddMenu">
-        <span class="dd-label">I want to...</span>
+        <div class="dd-header">
+          <span class="dd-label">I want to...</span>
+          <button class="dd-close" id="ddClose">✕</button>
+        </div>
         <a class="dd-item" href="#signup" id="ddSeller">
-          <div class="dd-ico dd-ico-s">📦</div>
-          <div class="dd-txt"><strong>List & sell inventory</strong><span>I have surplus stock to liquidate</span></div>
+          <div class="dd-ico dd-ico-s">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="dd-txt">
+            <strong>List & sell inventory</strong>
+            <span>I have surplus stock to liquidate</span>
+          </div>
         </a>
         <a class="dd-item" href="#signup" id="ddBuyer">
-          <div class="dd-ico dd-ico-b">🛒</div>
-          <div class="dd-txt"><strong>Browse & buy inventory</strong><span>I'm looking for bulk deals</span></div>
+          <div class="dd-ico dd-ico-b">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#888880" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
+          <div class="dd-txt">
+            <strong>Browse & buy inventory</strong>
+            <span>I'm looking for bulk deals</span>
+          </div>
         </a>
       </div>
     </div>
@@ -512,31 +532,34 @@ footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)
   // ── DROPDOWN ──
   var ddBtn = document.getElementById('ddBtn');
   var ddMenu = document.getElementById('ddMenu');
-  var ddWrap = document.getElementById('ddWrap');
+  var ddOverlay = document.getElementById('ddOverlay');
+  var ddClose = document.getElementById('ddClose');
 
-  function openDD(){ ddMenu.classList.add('is-open'); }
-  function closeDD(){ ddMenu.classList.remove('is-open'); }
-  function toggleDD(){ ddMenu.classList.contains('is-open') ? closeDD() : openDD(); }
+  function openDD(){
+    ddMenu.classList.add('is-open');
+    ddOverlay.classList.add('is-open');
+  }
+  function closeDD(){
+    ddMenu.classList.remove('is-open');
+    ddOverlay.classList.remove('is-open');
+  }
+  function toggleDD(){
+    ddMenu.classList.contains('is-open') ? closeDD() : openDD();
+  }
 
-  ddBtn.addEventListener('click', function(e){
-    e.stopPropagation();
-    toggleDD();
-  });
+  ddBtn.addEventListener('click', function(e){ e.stopPropagation(); toggleDD(); });
+  ddClose.addEventListener('click', function(e){ e.stopPropagation(); closeDD(); });
+  ddOverlay.addEventListener('click', closeDD);
 
   document.getElementById('ddSeller').addEventListener('click', function(){
     var r = document.querySelector('input[name="role"][value="seller"]');
     if(r) r.checked = true;
     closeDD();
   });
-
   document.getElementById('ddBuyer').addEventListener('click', function(){
     var r = document.querySelector('input[name="role"][value="buyer"]');
     if(r) r.checked = true;
     closeDD();
-  });
-
-  document.addEventListener('click', function(e){
-    if(ddWrap && !ddWrap.contains(e.target)) closeDD();
   });
 
   // ── CONTACT FORM ──

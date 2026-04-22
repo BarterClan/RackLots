@@ -30,16 +30,41 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--gold:#C9A84C;--gold2:#E8C96A;--bg:#0C0C0C;--bg2:#111111;--bg3:#181818;--border:rgba(255,255,255,0.07);--gold-border:rgba(201,168,76,0.25);--gold-dim:rgba(201,168,76,0.1);--text:#E8E8E0;--muted:#888880;--white:#FAFAF8}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.95);backdrop-filter:blur(20px);z-index:100}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--gold-border);border-radius:7px;display:flex;align-items:center;justify-content:center}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.97);backdrop-filter:blur(20px);z-index:1000}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--goldborder);border-radius:7px;display:flex;align-items:center;justify-content:center}
 .logo-text{font-size:1.15rem;font-weight:800;color:var(--white)}
 .logo-text span{color:var(--gold)}
-.logo-text .tld{color:var(--muted);font-weight:600;font-size:0.95rem}
-.nav-right{display:flex;align-items:center;gap:0.5rem}
-.nav-right a{color:var(--muted);text-decoration:none;font-size:0.85rem;padding:0.4rem 0.8rem;border-radius:6px;font-weight:500;transition:color 0.2s,background 0.2s}
-.nav-right a:hover{color:var(--white);background:var(--bg3)}
-.nav-cta{background:var(--gold)!important;color:var(--bg)!important;font-weight:700!important;border-radius:7px!important}
+.logo-tld{color:var(--muted);font-weight:600;font-size:0.95rem}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;padding:0.4rem 0.65rem;border-radius:6px;font-weight:500;white-space:nowrap;transition:color 0.2s,background 0.2s}
+.nav-links a:hover{color:var(--white);background:var(--bg3)}
+.nav-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:7px!important;padding:0.44rem 0.9rem!important;font-weight:700!important;margin-left:3px}
+.nav-gold:hover{background:var(--gold2)!important}
+.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;background:none;border:1px solid var(--border);border-radius:7px;padding:0;width:40px;height:40px;flex-shrink:0}
+.burger span{display:block;width:18px;height:2px;background:var(--white);border-radius:2px;transition:all 0.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-overlay{display:none;position:fixed;inset:0;top:64px;background:rgba(8,8,12,0.99);z-index:999;flex-direction:column;padding:1.5rem 6%;overflow-y:auto}
+.mob-overlay.is-open{display:flex}
+.mob-section-label{font-size:0.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);padding:1rem 0 0.4rem;display:block}
+.mob-overlay a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:600;padding:0.9rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;transition:color 0.2s}
+.mob-overlay a:hover{color:var(--gold)}
+.mob-overlay a::after{content:'→';color:var(--muted);font-size:0.85rem}
+.mob-cta-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:10px;padding:1rem 1.5rem!important;margin-top:0.8rem;font-weight:700;border-bottom:none!important}
+.mob-cta-gold::after{display:none!important}
+.mob-cta-gold:hover{background:var(--gold2)!important;color:var(--bg)!important}
+/* Blog post responsive */
+article{max-width:720px;margin:0 auto;padding:2.5rem 5%}
+.post-title{font-size:clamp(1.6rem,5vw,2.8rem)}
+.post-body{font-size:clamp(0.9rem,2.5vw,1rem)}
+.post-body h2{font-size:clamp(1.2rem,4vw,1.4rem)}
+.post-body h3{font-size:clamp(1rem,3vw,1.1rem)}
+.post-hero{height:clamp(160px,30vw,300px)}
+@media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
+@media(min-width:861px){.burger{display:none!important}.mob-overlay{display:none!important}}
+@media(max-width:480px){article{padding:2rem 5%}.post-cta{padding:1.5rem}.back-btn{margin-bottom:1.2rem}}
 article{max-width:740px;margin:0 auto;padding:3rem 5%}
 .breadcrumb{font-size:0.78rem;color:var(--muted);margin-bottom:2rem}
 .breadcrumb a{color:var(--muted);text-decoration:none}
@@ -75,18 +100,28 @@ footer a:hover{color:var(--gold)}
 </head>
 <body>
 <nav>
-  <a href="/" class="logo">
-    <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/><rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/><rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/></svg></div>
-    <div class="logo-text">rack<span>lots</span><span class="tld">.com</span></div>
+  <a href="https://www.racklots.com" class="logo-wrap">
+    <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/><rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/><rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/></svg></div>
+    <div class="logo-text">rack<span>lots</span><span class="logo-tld">.com</span></div>
   </a>
-  <div class="nav-right">
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/#contact">Contact</a>
-    <a href="/#signup" class="nav-cta">Get early access</a>
+  <div class="nav-links">
+    <a href="https://www.racklots.com/sell">For Sellers</a>
+    <a href="https://www.racklots.com/buy">For Buyers</a>
+    <a href="https://www.racklots.com/blog">Blog</a>
+    <a href="https://www.racklots.com/#contact">Contact</a>
+    <a href="https://www.racklots.com/#signup" class="nav-gold">Get early access</a>
   </div>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
-
+<div class="mob-overlay" id="mobMenu">
+  <span class="mob-section-label">Navigate</span>
+  <a href="https://www.racklots.com/sell">For Sellers</a>
+  <a href="https://www.racklots.com/buy">For Buyers</a>
+  <a href="https://www.racklots.com/blog">Blog</a>
+  <a href="https://www.racklots.com/#contact">Contact</a>
+  <span class="mob-section-label">Get started</span>
+  <a href="https://www.racklots.com/#signup" class="mob-cta-gold">Get early access →</a>
+</div>
 <article>
   <div class="breadcrumb">
     <a href="/">Home</a><span>›</span>
@@ -144,9 +179,24 @@ footer a:hover{color:var(--gold)}
 
 <footer>
   <p>&copy; 2026 racklots.com. All rights reserved.</p>
-  <div style="display:flex;gap:1.5rem">
-    <a href="/">Home</a><a href="/blog">Blog</a><a href="/#contact">Contact</a>
+  <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+    <a href="https://www.racklots.com">Home</a>
+    <a href="https://www.racklots.com/sell">For Sellers</a>
+    <a href="https://www.racklots.com/buy">For Buyers</a>
+    <a href="https://www.racklots.com/blog">Blog</a>
+    <a href="https://www.racklots.com/#contact">Contact</a>
   </div>
 </footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('mobMenu');
+  if(!b||!m)return;
+  function openM(){m.classList.add('is-open');b.classList.add('open');document.body.style.overflow='hidden'}
+  function closeM(){m.classList.remove('is-open');b.classList.remove('open');document.body.style.overflow=''}
+  b.addEventListener('click',function(e){e.stopPropagation();m.classList.contains('is-open')?closeM():openM()});
+  document.addEventListener('click',function(e){if(m.classList.contains('is-open')&&!m.contains(e.target)&&!b.contains(e.target))closeM()});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
+})();
+</script>
 </body>
 </html>

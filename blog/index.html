@@ -118,5 +118,16 @@ footer a:hover{color:var(--gold)}
     <a href="/blog/sitemap.xml">Sitemap</a>
   </div>
 </footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('mobMenu');
+  if(!b||!m)return;
+  function openM(){m.classList.add('is-open');b.classList.add('open');document.body.style.overflow='hidden'}
+  function closeM(){m.classList.remove('is-open');b.classList.remove('open');document.body.style.overflow=''}
+  b.addEventListener('click',function(e){e.stopPropagation();m.classList.contains('is-open')?closeM():openM()});
+  document.addEventListener('click',function(e){if(m.classList.contains('is-open')&&!m.contains(e.target)&&!b.contains(e.target))closeM()});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
+})();
+</script>
 </body>
 </html>

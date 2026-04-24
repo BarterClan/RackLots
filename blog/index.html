@@ -21,103 +21,174 @@
 </script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--gold:#C9A84C;--gold2:#E8C96A;--bg:#0C0C0C;--bg2:#111111;--bg3:#181818;--border:rgba(255,255,255,0.07);--gold-border:rgba(201,168,76,0.25);--gold-dim:rgba(201,168,76,0.1);--text:#E8E8E0;--muted:#888880;--white:#FAFAF8}
+:root{
+  --gold:#C9A84C;--gold2:#E8C96A;--goldd:#A07830;
+  --golddim:rgba(201,168,76,0.12);--goldborder:rgba(201,168,76,0.25);
+  --bg:#0C0C0C;--bg2:#111111;--bg3:#181818;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --text:#E8E8E0;--muted:#888880;--muted2:#555550;--white:#FAFAF8;
+}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 5%;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.95);backdrop-filter:blur(20px);z-index:100}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--gold-border);border-radius:7px;display:flex;align-items:center;justify-content:center}
+
+/* ── NAV ── */
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.97);backdrop-filter:blur(20px);z-index:1000}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--goldborder);border-radius:7px;display:flex;align-items:center;justify-content:center}
 .logo-text{font-size:1.15rem;font-weight:800;color:var(--white)}
 .logo-text span{color:var(--gold)}
-.logo-text .tld{color:var(--muted);font-weight:600;font-size:0.95rem}
-.nav-right{display:flex;align-items:center;gap:0.5rem}
-.nav-right a{color:var(--muted);text-decoration:none;font-size:0.85rem;padding:0.4rem 0.8rem;border-radius:6px;font-weight:500;transition:color 0.2s,background 0.2s}
-.nav-right a:hover{color:var(--white);background:var(--bg3)}
-.nav-cta{background:var(--gold)!important;color:var(--bg)!important;font-weight:700!important;border-radius:7px!important}
-.nav-cta:hover{background:var(--gold2)!important}
-.hero{padding:4rem 5% 3rem;max-width:700px}
+.logo-tld{color:var(--muted);font-weight:600;font-size:0.95rem}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;padding:0.4rem 0.65rem;border-radius:6px;font-weight:500;white-space:nowrap;transition:color 0.2s,background 0.2s}
+.nav-links a:hover{color:var(--white);background:var(--bg3)}
+.nav-links a.active{color:var(--gold)}
+.nav-outline{border:1px solid var(--goldborder)!important;color:var(--gold)!important;border-radius:7px!important;padding:0.44rem 0.85rem!important;font-weight:600!important;margin-left:3px}
+.nav-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:7px!important;padding:0.44rem 0.9rem!important;font-weight:700!important;margin-left:3px}
+.nav-gold:hover{background:var(--gold2)!important}
+
+/* ── BURGER ── */
+.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;background:none;border:1px solid var(--border);border-radius:7px;width:40px;height:40px;flex-shrink:0;padding:0}
+.burger span{display:block;width:18px;height:2px;background:var(--white);border-radius:2px;transition:all 0.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE MENU ── */
+.mob-overlay{display:none;position:fixed;inset:0;top:64px;background:rgba(8,8,12,0.99);z-index:999;flex-direction:column;padding:1.5rem 6%;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mob-overlay.is-open{display:flex}
+.mob-section-label{font-size:0.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);padding:1rem 0 0.4rem;display:block}
+.mob-overlay a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:600;padding:0.9rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;transition:color 0.2s}
+.mob-overlay a:hover{color:var(--gold)}
+.mob-overlay a::after{content:'→';color:var(--muted);font-size:0.85rem;transition:color 0.2s}
+.mob-overlay a:hover::after{color:var(--gold)}
+.mob-cta-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:10px;padding:1rem 1.5rem!important;margin-top:0.8rem;font-weight:700;border-bottom:none!important}
+.mob-cta-gold::after{display:none!important}
+.mob-cta-gold:hover{background:var(--gold2)!important;color:var(--bg)!important}
+.mob-cta-outline{border:1px solid var(--goldborder)!important;color:var(--gold)!important;border-radius:10px;padding:0.9rem 1.5rem!important;margin-top:0.5rem;font-weight:600;border-bottom:none!important}
+.mob-cta-outline::after{display:none!important}
+
+/* ── BREAKPOINTS ── */
+@media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
+@media(min-width:861px){.burger{display:none!important}.mob-overlay{display:none!important}}
+
+/* ── HERO ── */
+.hero{padding:clamp(2rem,5vw,4rem) 5% clamp(1.5rem,4vw,3rem)}
 .eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;display:flex;align-items:center;gap:8px}
 .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold)}
-h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:0.8rem;line-height:1.15}
-.sub{color:var(--muted);font-size:0.95rem;max-width:480px;line-height:1.75}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:0 5% 5rem}
+h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:0.8rem;line-height:1.15}
+.sub{color:var(--muted);font-size:clamp(0.88rem,2.5vw,0.95rem);max-width:480px;line-height:1.75}
+
+/* ── BLOG GRID ── */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:1.2rem;padding:0 5% clamp(3rem,8vw,5rem)}
 .blog-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color 0.2s,transform 0.2s;text-decoration:none;display:block}
-.blog-card:hover{border-color:var(--gold-border);transform:translateY(-3px)}
-.thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;border-bottom:1px solid var(--border)}
+.blog-card:hover{border-color:var(--goldborder);transform:translateY(-3px)}
+.thumb{height:clamp(140px,22vw,180px);display:flex;align-items:center;justify-content:center;font-size:clamp(2.5rem,6vw,3.5rem);border-bottom:1px solid var(--border)}
 .t1{background:linear-gradient(135deg,#161410,#1e1a0e)}
 .t2{background:linear-gradient(135deg,#0e1216,#101820)}
 .t3{background:linear-gradient(135deg,#120e10,#1a1016)}
-.card-body{padding:1.4rem}
-.tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
-.card-body h2{font-size:1rem;font-weight:700;color:var(--white);line-height:1.45;margin-bottom:0.5rem}
-.card-body p{font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
-.meta{display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--muted)}
+.card-body{padding:1.2rem 1.3rem 1.4rem}
+.tag{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;display:block}
+.card-body h2{font-size:clamp(0.88rem,2.5vw,1rem);font-weight:700;color:var(--white);line-height:1.45;margin-bottom:0.5rem}
+.card-body p{font-size:clamp(0.78rem,2vw,0.82rem);color:var(--muted);line-height:1.65;margin-bottom:1rem}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:0.7rem;color:var(--muted)}
 .read{color:var(--gold);font-weight:700}
+
+/* ── FOOTER ── */
 footer{border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
-footer p{font-size:0.78rem;color:var(--muted)}
-footer a{font-size:0.78rem;color:var(--muted);text-decoration:none}
-footer a:hover{color:var(--gold)}
+footer p{font-size:0.75rem;color:var(--muted2)}
+.footer-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.footer-links a{font-size:0.75rem;color:var(--muted2);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
-  <a href="/" class="logo">
-    <div class="logo-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/><rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/><rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/></svg></div>
-    <div class="logo-text">rack<span>lots</span><span class="tld">.com</span></div>
+  <a href="https://www.racklots.com" class="logo-wrap">
+    <div class="logo-icon">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+        <rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/>
+        <rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/>
+        <rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="logo-text">rack<span>lots</span><span class="logo-tld">.com</span></div>
   </a>
-  <div class="nav-right">
-    <a href="/">Home</a>
-    <a href="/blog" style="color:var(--white)">Blog</a>
-    <a href="/#contact">Contact</a>
-    <a href="/#signup" class="nav-cta">Get early access</a>
+  <div class="nav-links">
+    <a href="https://www.racklots.com/sell">For Sellers</a>
+    <a href="https://www.racklots.com/buy">For Buyers</a>
+    <a href="https://www.racklots.com/blog" class="active">Blog</a>
+    <a href="https://www.racklots.com/#contact">Contact</a>
+    <a href="https://www.racklots.com/#signup" class="nav-outline">Get early access</a>
+    <a href="https://www.racklots.com/#signup" class="nav-gold">Request access</a>
   </div>
+  <button class="burger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<div class="hero">
-  <div class="eyebrow">Resources & insights</div>
-  <h1>The liquidation playbook</h1>
-  <p class="sub">Practical guides, industry insights, and checklists to help Indian businesses get more from surplus inventory.</p>
+<!-- MOBILE MENU -->
+<div class="mob-overlay" id="mobMenu">
+  <span class="mob-section-label">Navigate</span>
+  <a href="https://www.racklots.com/sell">For Sellers</a>
+  <a href="https://www.racklots.com/buy">For Buyers</a>
+  <a href="https://www.racklots.com/blog">Blog</a>
+  <a href="https://www.racklots.com/#contact">Contact</a>
+  <span class="mob-section-label">Get started</span>
+  <a href="https://www.racklots.com/#signup" class="mob-cta-outline">Get early access</a>
+  <a href="https://www.racklots.com/#signup" class="mob-cta-gold">Request access →</a>
 </div>
 
-<div class="blog-grid">
-  <a href="/blog/how-to-price-surplus-inventory" class="blog-card">
-    <div class="thumb t1">📦</div>
-    <div class="card-body">
-      <div class="tag">Guide</div>
-      <h2>How to price surplus inventory for maximum recovery</h2>
-      <p>Learn the pricing strategies top procurement teams use to recover 40–60% more on liquidation deals.</p>
-      <div class="meta"><span>5 min read · Apr 2026</span><span class="read">Read →</span></div>
-    </div>
-  </a>
-  <a href="/blog/why-indian-manufacturers-use-b2b-liquidation" class="blog-card">
-    <div class="thumb t2">🏭</div>
-    <div class="card-body">
-      <div class="tag">Industry</div>
-      <h2>Why Indian manufacturers are turning to B2B liquidation platforms</h2>
-      <p>The shift away from traditional brokers is accelerating. Here's what's driving it and what it means for you.</p>
-      <div class="meta"><span>7 min read · Mar 2026</span><span class="read">Read →</span></div>
-    </div>
-  </a>
-  <a href="/blog/10-point-checklist-before-listing-bulk-inventory" class="blog-card">
-    <div class="thumb t3">📋</div>
-    <div class="card-body">
-      <div class="tag">Checklist</div>
-      <h2>The 10-point checklist before listing bulk inventory</h2>
-      <p>Avoid the most common mistakes that slow down deals. A quick checklist for first-time and repeat sellers.</p>
-      <div class="meta"><span>4 min read · Mar 2026</span><span class="read">Read →</span></div>
-    </div>
-  </a>
-</div>
+<main>
+  <div class="hero">
+    <div class="eyebrow">Resources & insights</div>
+    <h1>The liquidation playbook</h1>
+    <p class="sub">Practical guides, industry insights, and checklists to help Indian businesses get more from surplus inventory.</p>
+  </div>
+
+  <div class="blog-grid">
+    <a href="https://www.racklots.com/blog/how-to-price-surplus-inventory" class="blog-card">
+      <div class="thumb t1">📦</div>
+      <div class="card-body">
+        <span class="tag">Guide</span>
+        <h2>How to price surplus inventory for maximum recovery</h2>
+        <p>Learn the pricing strategies top procurement teams use to recover 40–60% more on liquidation deals.</p>
+        <div class="meta"><span>5 min read · Apr 2026</span><span class="read">Read →</span></div>
+      </div>
+    </a>
+    <a href="https://www.racklots.com/blog/why-indian-manufacturers-use-b2b-liquidation" class="blog-card">
+      <div class="thumb t2">🏭</div>
+      <div class="card-body">
+        <span class="tag">Industry</span>
+        <h2>Why Indian manufacturers are turning to B2B liquidation platforms</h2>
+        <p>The shift away from traditional brokers is accelerating. Here's what's driving it and what it means for you.</p>
+        <div class="meta"><span>7 min read · Mar 2026</span><span class="read">Read →</span></div>
+      </div>
+    </a>
+    <a href="https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory" class="blog-card">
+      <div class="thumb t3">📋</div>
+      <div class="card-body">
+        <span class="tag">Checklist</span>
+        <h2>The 10-point checklist before listing bulk inventory</h2>
+        <p>Avoid the most common mistakes that slow down deals. A quick checklist for first-time and repeat sellers.</p>
+        <div class="meta"><span>4 min read · Mar 2026</span><span class="read">Read →</span></div>
+      </div>
+    </a>
+  </div>
+</main>
 
 <footer>
   <p>&copy; 2026 racklots.com. All rights reserved.</p>
-  <div style="display:flex;gap:1.5rem">
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/#contact">Contact</a>
-    <a href="/blog/sitemap.xml">Sitemap</a>
+  <div class="footer-links">
+    <a href="https://www.racklots.com">Home</a>
+    <a href="https://www.racklots.com/sell">For Sellers</a>
+    <a href="https://www.racklots.com/buy">For Buyers</a>
+    <a href="https://www.racklots.com/blog">Blog</a>
+    <a href="https://www.racklots.com/#contact">Contact</a>
   </div>
 </footer>
+
 <script>
 (function(){
   var b=document.getElementById('burger'),m=document.getElementById('mobMenu');

@@ -4,20 +4,49 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.racklots.com/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://www.racklots.com/sell</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.racklots.com/buy</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.racklots.com/about</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.racklots.com/faq</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Blog index -->
   <url>
     <loc>https://www.racklots.com/blog</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Blog Post 1 -->
+  <!-- Blog posts -->
   <url>
     <loc>https://www.racklots.com/blog/how-to-price-surplus-inventory</loc>
     <lastmod>2026-04-01</lastmod>
@@ -25,7 +54,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Post 2 -->
   <url>
     <loc>https://www.racklots.com/blog/why-indian-manufacturers-use-b2b-liquidation</loc>
     <lastmod>2026-03-15</lastmod>
@@ -33,12 +61,26 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Post 3 -->
   <url>
     <loc>https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Legal pages — low priority, no changefreq needed -->
+  <url>
+    <loc>https://www.racklots.com/privacy</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.racklots.com/terms</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

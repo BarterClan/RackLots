@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy | racklots.com</title>
+<meta name="description" content="racklots.com privacy policy — how we collect, use, and protect your personal and business data."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.racklots.com/privacy"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9A84C;--gold2:#E8C96A;--golddim:rgba(201,168,76,0.12);--goldborder:rgba(201,168,76,0.25);--bg:#0C0C0C;--bg2:#111111;--bg3:#181818;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#E8E8E0;--muted:#888880;--muted2:#555550;--white:#FAFAF8}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.97);backdrop-filter:blur(20px);z-index:1000}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--goldborder);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.logo-text{font-size:1.15rem;font-weight:800;color:var(--white)}
+.logo-text span{color:var(--gold)}
+.logo-tld{color:var(--muted);font-weight:600;font-size:0.95rem}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;padding:0.4rem 0.65rem;border-radius:6px;font-weight:500;white-space:nowrap;transition:color 0.2s,background 0.2s}
+.nav-links a:hover{color:var(--white);background:var(--bg3)}
+.nav-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:7px!important;padding:0.44rem 0.9rem!important;font-weight:700!important;margin-left:3px}
+.nav-gold:hover{background:var(--gold2)!important}
+.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer;background:none;border:1px solid var(--border);border-radius:7px;width:40px;height:40px;flex-shrink:0;padding:0}
+.burger span{display:block;width:18px;height:2px;background:var(--white);border-radius:2px;transition:all 0.25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-overlay{display:none;position:fixed;inset:0;top:64px;background:rgba(8,8,12,0.99);z-index:999;flex-direction:column;padding:1.5rem 6%;overflow-y:auto}
+.mob-overlay.is-open{display:flex}
+.mob-section-label{font-size:0.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);padding:1rem 0 0.4rem;display:block}
+.mob-overlay a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:600;padding:0.9rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.mob-overlay a::after{content:'→';color:var(--muted);font-size:0.85rem}
+.mob-cta-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:10px;padding:1rem 1.5rem!important;margin-top:0.8rem;font-weight:700;border-bottom:none!important}
+.mob-cta-gold::after{display:none!important}
+@media(max-width:860px){.nav-links{display:none}.burger{display:flex}}
+@media(min-width:861px){.burger{display:none!important}.mob-overlay{display:none!important}}
+.doc-wrap{max-width:760px;margin:0 auto;padding:clamp(3rem,5vw,4.5rem) 5%}
+.doc-eyebrow{font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
+.doc-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--white);letter-spacing:-1px;margin-bottom:0.5rem}
+.doc-date{font-size:0.8rem;color:var(--muted2);margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.doc-body h2{font-size:1.15rem;font-weight:800;color:var(--white);margin:2.5rem 0 0.8rem;letter-spacing:-0.3px}
+.doc-body p{font-size:0.9rem;color:#AAAAAA;line-height:1.85;margin-bottom:1rem}
+.doc-body ul{margin:0.5rem 0 1rem 1.5rem}
+.doc-body li{font-size:0.9rem;color:#AAAAAA;line-height:1.8;margin-bottom:0.4rem}
+.doc-body strong{color:var(--white);font-weight:700}
+.doc-body a{color:var(--gold);text-decoration:none}
+.doc-body a:hover{color:var(--gold2)}
+footer{border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;background:var(--bg)}
+footer p{font-size:0.75rem;color:var(--muted2)}
+.footer-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.footer-links a{font-size:0.75rem;color:var(--muted2);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://www.racklots.com" class="logo-wrap">
+    <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/><rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/><rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/></svg></div>
+    <div class="logo-text">rack<span>lots</span><span class="logo-tld">.com</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="https://www.racklots.com/sell">For Sellers</a>
+    <a href="https://www.racklots.com/buy">For Buyers</a>
+    <a href="https://www.racklots.com/blog">Blog</a>
+    <a href="https://www.racklots.com/about">About</a>
+    <a href="https://www.racklots.com/#contact">Contact</a>
+    <a href="https://www.racklots.com/#signup" class="nav-gold">Get early access</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-overlay" id="mobMenu">
+  <span class="mob-section-label">Navigate</span>
+  <a href="https://www.racklots.com/sell">For Sellers</a>
+  <a href="https://www.racklots.com/buy">For Buyers</a>
+  <a href="https://www.racklots.com/blog">Blog</a>
+  <a href="https://www.racklots.com/about">About</a>
+  <a href="https://www.racklots.com/#contact">Contact</a>
+  <span class="mob-section-label">Get started</span>
+  <a href="https://www.racklots.com/#signup" class="mob-cta-gold">Get early access →</a>
+</div>
+
+<div class="doc-wrap">
+  <div class="doc-eyebrow">Legal</div>
+  <h1 class="doc-title">Privacy Policy</h1>
+  <div class="doc-date">Last updated: April 2026 &nbsp;·&nbsp; Effective: April 2026</div>
+  <div class="doc-body">
+    <p>This Privacy Policy describes how <strong>racklots.com</strong> ("we", "us", or "our") collects, uses, and protects information about you when you use our platform at www.racklots.com. By using our platform, you agree to the collection and use of information in accordance with this policy.</p>
+
+    <h2>1. Information we collect</h2>
+    <p>We collect the following types of information:</p>
+    <ul>
+      <li><strong>Business information:</strong> Company name, GST number, business registration details, PAN, director/owner identity documents submitted during KYB verification.</li>
+      <li><strong>Contact information:</strong> Name, email address, phone number, and business address provided during registration or through our contact forms.</li>
+      <li><strong>Transaction information:</strong> Details of listings, offers, deals, and payments processed through our platform.</li>
+      <li><strong>Usage information:</strong> Pages visited, features used, time spent on platform, browser type, IP address, and device information collected automatically.</li>
+      <li><strong>Communications:</strong> Messages exchanged between buyers and sellers on our platform, and communications with our support team.</li>
+    </ul>
+
+    <h2>2. How we use your information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Verify your business identity (KYB process)</li>
+      <li>Facilitate transactions between buyers and sellers</li>
+      <li>Process payments and manage escrow</li>
+      <li>Send transaction confirmations, invoices, and platform notifications</li>
+      <li>Respond to your inquiries and provide customer support</li>
+      <li>Improve and personalise your experience on the platform</li>
+      <li>Comply with legal obligations including GST regulations</li>
+      <li>Prevent fraud and ensure platform security</li>
+      <li>Send marketing communications about racklots.com (you can opt out at any time)</li>
+    </ul>
+
+    <h2>3. How we share your information</h2>
+    <p>We do not sell your personal or business information to third parties. We share information only in the following circumstances:</p>
+    <ul>
+      <li><strong>With transaction counterparties:</strong> Buyers and sellers see each other's business name, city, and contact information when a deal is agreed.</li>
+      <li><strong>With service providers:</strong> We work with trusted third parties for payment processing, email delivery, and analytics. These providers are bound by confidentiality agreements.</li>
+      <li><strong>For legal compliance:</strong> When required by law, court order, or regulatory authority — including GST authorities and other Indian government agencies.</li>
+      <li><strong>With your consent:</strong> In any other circumstances where you have explicitly agreed to sharing.</li>
+    </ul>
+
+    <h2>4. Data security</h2>
+    <p>We implement industry-standard security measures to protect your information, including SSL encryption, secure data storage, and access controls. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+
+    <h2>5. Data retention</h2>
+    <p>We retain your information for as long as your account is active and for a period thereafter as required by law (particularly GST records, which must be retained for 8 years under Indian law). You may request deletion of your account and associated personal data at any time, subject to legal retention requirements.</p>
+
+    <h2>6. Your rights</h2>
+    <p>Under India's Digital Personal Data Protection Act (DPDP Act) 2023 and applicable regulations, you have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you</li>
+      <li>Correct inaccurate personal data</li>
+      <li>Request erasure of your personal data (subject to legal obligations)</li>
+      <li>Withdraw consent for marketing communications at any time</li>
+      <li>File a complaint with the Data Protection Board of India</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:hello@racklots.com">hello@racklots.com</a>.</p>
+
+    <h2>7. Cookies</h2>
+    <p>We use essential cookies to operate the platform and analytics cookies to understand how it is used. You can control cookie settings through your browser. Disabling cookies may affect some platform functionality.</p>
+
+    <h2>8. Third-party links</h2>
+    <p>Our platform may contain links to third-party websites. We are not responsible for the privacy practices of those sites and encourage you to read their privacy policies.</p>
+
+    <h2>9. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify registered users of material changes via email. Continued use of the platform after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>10. Contact us</h2>
+    <p>For any questions about this Privacy Policy or how we handle your data:</p>
+    <ul>
+      <li>Email: <a href="mailto:hello@racklots.com">hello@racklots.com</a></li>
+      <li>Phone: +91 88602 08288</li>
+      <li>Address: New Delhi, India</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 racklots.com. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="https://www.racklots.com">Home</a>
+    <a href="https://www.racklots.com/about">About</a>
+    <a href="https://www.racklots.com/faq">FAQ</a>
+    <a href="https://www.racklots.com/privacy">Privacy</a>
+    <a href="https://www.racklots.com/terms">Terms</a>
+  </div>
+</footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('mobMenu');
+  if(!b||!m)return;
+  function openM(){m.classList.add('is-open');b.classList.add('open');document.body.style.overflow='hidden'}
+  function closeM(){m.classList.remove('is-open');b.classList.remove('open');document.body.style.overflow=''}
+  b.addEventListener('click',function(e){e.stopPropagation();m.classList.contains('is-open')?closeM():openM()});
+  document.addEventListener('click',function(e){if(m.classList.contains('is-open')&&!m.contains(e.target)&&!b.contains(e.target))closeM()});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
+})();
+</script>
+</body>
+</html>

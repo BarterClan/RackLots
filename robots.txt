@@ -1,0 +1,15 @@
+# robots.txt for racklots.com
+# Last updated: April 2026
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Block access to any future admin or private paths
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.racklots.com/sitemap.xml

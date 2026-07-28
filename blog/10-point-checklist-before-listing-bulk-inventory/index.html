@@ -12,16 +12,16 @@
 
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The 10-Point Checklist Before Listing Bulk Inventory | racklots.com</title>
-<meta name="description" content="Before you list bulk inventory on any B2B marketplace, run through this 10-point checklist. It takes 15 minutes and could mean lakhs of rupees in additional recovery."/>
-<meta name="keywords" content="bulk inventory listing checklist, B2B liquidation checklist, surplus inventory listing tips India, how to list overstock inventory"/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory"/>
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
+<title>The 10-Point Checklist Before Listing Bulk Inventory | racklots.com</title>
+<meta name="description" content="Before you list bulk inventory on any B2B marketplace, run through this 10-point checklist. It takes 15 minutes and could mean lakhs of rupees in additional recovery."/>
+<meta name="keywords" content="bulk inventory listing checklist, B2B liquidation checklist, surplus inventory listing tips India, how to list overstock inventory"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="The 10-Point Checklist Before Listing Bulk Inventory"/>
 <meta property="og:description" content="15 minutes with this checklist could mean lakhs of rupees in additional recovery on your bulk inventory listing."/>
@@ -123,31 +123,86 @@ footer{border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-c
 footer p{font-size:0.78rem;color:var(--muted)}
 footer a{font-size:0.78rem;color:var(--muted);text-decoration:none}
 footer a:hover{color:var(--gold)}
+
+/* === SHARED NAV/FOOTER OVERRIDES (standardized) === */
+/* ─── NAV ─── */
+nav{display:flex;justify-content:space-between;align-items:center;padding:0 5%;height:64px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(12,12,12,0.97);backdrop-filter:blur(20px);z-index:1000}
+.logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;flex-shrink:0}
+.logo-icon{width:32px;height:32px;background:var(--bg3);border:1px solid var(--goldborder);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.logo-text{font-size:1.15rem;font-weight:800;color:var(--white)}
+.logo-text span{color:var(--gold)}
+.logo-tld{color:var(--muted);font-weight:600;font-size:0.95rem}
+.nav-desktop{display:flex;align-items:center;gap:2px}
+.nav-desktop a{color:var(--muted);text-decoration:none;font-size:0.83rem;padding:0.4rem 0.7rem;border-radius:6px;font-weight:500;white-space:nowrap;transition:color 0.2s,background 0.2s}
+.nav-desktop a:hover{color:var(--white);background:var(--bg3)}
+.nav-outline{border:1px solid var(--goldborder)!important;color:var(--gold)!important;border-radius:7px!important;padding:0.45rem 0.9rem!important;font-weight:600!important;margin-left:4px}
+.nav-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:7px!important;padding:0.45rem 1rem!important;font-weight:700!important;margin-left:4px}
+.nav-gold:hover{background:var(--gold2)!important}
+/* Hamburger */
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;background:none;border:1px solid var(--border);border-radius:7px;padding:8px;width:40px;height:40px}
+.burger span{display:block;width:18px;height:2px;background:var(--white);border-radius:2px;transition:all 0.25s}
+/* Mobile overlay */
+.mob-overlay{display:none;position:fixed;inset:0;top:64px;background:rgba(8,8,12,0.98);z-index:999;flex-direction:column;padding:2rem 6%;overflow-y:auto}
+.mob-overlay.is-open{display:flex}
+.mob-section-label{font-size:0.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted2);padding:1.2rem 0 0.5rem;display:block}
+.mob-overlay a{color:var(--text);text-decoration:none;font-size:1rem;font-weight:600;padding:0.95rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;transition:color 0.2s}
+.mob-overlay a::after{content:'→';color:var(--muted);font-size:0.85rem}
+.mob-overlay a:hover{color:var(--gold)}
+.mob-cta-gold{background:var(--gold)!important;color:var(--bg)!important;border-radius:10px;padding:1rem 1.5rem!important;margin-top:1rem;font-weight:700;border-bottom:none!important;justify-content:center!important}
+.mob-cta-gold::after{display:none!important}
+.mob-cta-outline{border:1px solid var(--goldborder)!important;color:var(--gold)!important;border-radius:10px;padding:0.9rem 1.5rem!important;margin-top:0.5rem;font-weight:600;border-bottom:none!important;justify-content:center!important}
+.mob-cta-outline::after{display:none!important}
+@media(max-width:860px){.nav-desktop{display:none}.burger{display:flex}}
+@media(min-width:861px){.burger{display:none!important}.mob-overlay{display:none!important}}
+footer{padding:2.5rem 5%;border-top:1px solid var(--border);background:var(--bg)}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.footer-top{grid-template-columns:1fr}}
+.footer-logo-wrap{display:flex;align-items:center;gap:9px;margin-bottom:0.8rem}
+.footer-logo-icon{width:30px;height:30px;background:var(--bg2);border:1px solid var(--goldborder);border-radius:7px;display:flex;align-items:center;justify-content:center}
+.footer-logo-text{font-size:1.1rem;font-weight:800;color:var(--white)}
+.footer-logo-text span{color:var(--gold)}
+.footer-tagline{font-size:0.78rem;color:var(--muted);line-height:1.65}
+.footer-col h4{font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted2);margin-bottom:0.8rem}
+.footer-col a{display:block;font-size:0.8rem;color:var(--muted);text-decoration:none;margin-bottom:0.5rem;transition:color 0.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.73rem;color:var(--muted2)}
+.footer-bottom-links{display:flex;gap:1.5rem}
+.footer-bottom-links a{font-size:0.73rem;color:var(--muted2);text-decoration:none}
+.footer-bottom-links a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
+<!-- NAV -->
 <nav>
   <a href="https://www.racklots.com" class="logo-wrap">
     <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/><rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/><rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/></svg></div>
     <div class="logo-text">rack<span>lots</span><span class="logo-tld">.com</span></div>
   </a>
-  <div class="nav-links">
+  <div class="nav-desktop">
     <a href="https://www.racklots.com/sell">For Sellers</a>
     <a href="https://www.racklots.com/buy">For Buyers</a>
     <a href="https://www.racklots.com/blog">Blog</a>
+    <a href="https://www.racklots.com/about">About</a>
     <a href="https://www.racklots.com/#contact">Contact</a>
-    <a href="https://www.racklots.com/#signup" class="nav-gold">Get early access</a>
+    <a href="https://www.racklots.com/#signup" class="nav-outline">Get early access</a>
+    <a href="https://www.racklots.com/#signup" class="nav-gold">Request access</a>
   </div>
-  <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<!-- MOBILE MENU -->
 <div class="mob-overlay" id="mobMenu">
   <span class="mob-section-label">Navigate</span>
-  <a href="https://www.racklots.com/sell">For Sellers</a>
-  <a href="https://www.racklots.com/buy">For Buyers</a>
+  <a href="https://www.racklots.com/#how" class="mob-link">How it works</a>
+  <a href="https://www.racklots.com/#why" class="mob-link">Why us</a>
   <a href="https://www.racklots.com/blog">Blog</a>
-  <a href="https://www.racklots.com/#contact">Contact</a>
+  <a href="https://www.racklots.com/#contact" class="mob-link">Contact</a>
   <span class="mob-section-label">Get started</span>
-  <a href="https://www.racklots.com/#signup" class="mob-cta-gold">Get early access →</a>
+  <a href="https://www.racklots.com/#signup" class="mob-link mob-cta-outline">Get early access</a>
+  <a href="https://www.racklots.com/#signup" class="mob-link mob-cta-gold">Request access →</a>
 </div>
 <article>
   <div class="breadcrumb">
@@ -277,17 +332,28 @@ footer a:hover{color:var(--gold)}
   </div>
 </article>
 
-<footer style="border-top:1px solid var(--border);padding:2rem 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center;background:var(--bg)">
-  <p style="font-size:0.75rem;color:var(--muted2)">&copy; 2026 racklots.com. All rights reserved.</p>
-  <div style="display:flex;gap:1.2rem;flex-wrap:wrap">
-    <a href="https://www.racklots.com" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">Home</a>
-    <a href="https://www.racklots.com/sell" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">For Sellers</a>
-    <a href="https://www.racklots.com/buy" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">For Buyers</a>
-    <a href="https://www.racklots.com/blog" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">Blog</a>
-    <a href="https://www.racklots.com/about" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">About</a>
-    <a href="https://www.racklots.com/faq" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">FAQ</a>
-    <a href="https://www.racklots.com/privacy" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">Privacy</a>
-    <a href="https://www.racklots.com/terms" style="font-size:0.75rem;color:var(--muted2);text-decoration:none">Terms</a>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo-wrap">
+        <div class="footer-logo-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="3" rx="1" fill="#C9A84C"/><rect x="2" y="9" width="16" height="3" rx="1" fill="#C9A84C" opacity="0.6"/><rect x="2" y="14" width="10" height="3" rx="1" fill="#C9A84C" opacity="0.3"/></svg></div>
+        <div class="footer-logo-text">rack<span>lots</span><span style="color:var(--muted);font-weight:600;font-size:0.95rem">.com</span></div>
+      </div>
+      <p class="footer-tagline">India's premier B2B liquidation marketplace. Move surplus inventory fast.</p>
+    </div>
+    <div class="footer-col"><h4>Platform</h4><a href="https://www.racklots.com/sell">For Sellers</a><a href="https://www.racklots.com/buy">For Buyers</a><a href="https://www.racklots.com/#how">How it works</a><a href="https://www.racklots.com/#signup">Get early access</a></div>
+    <div class="footer-col"><h4>Blog</h4><a href="https://www.racklots.com/blog/how-to-price-surplus-inventory">Pricing surplus inventory</a><a href="https://www.racklots.com/blog/why-indian-manufacturers-use-b2b-liquidation">B2B liquidation trends</a><a href="https://www.racklots.com/blog/10-point-checklist-before-listing-bulk-inventory">Listing checklist</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="https://www.racklots.com/about">About us</a><a href="https://www.racklots.com/faq">FAQ</a><a href="https://www.racklots.com/#contact">Contact</a></div>
+    <div class="footer-col"><h4>Contact</h4><a href="tel:+918860208288">+91 88602 08288</a><a href="mailto:hello@racklots.com">hello@racklots.com</a><a href="https://wa.me/918860208288" target="_blank">WhatsApp</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 racklots.com. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="https://www.racklots.com/privacy">Privacy policy</a>
+      <a href="https://www.racklots.com/terms">Terms of use</a>
+      <a href="https://www.racklots.com/faq">FAQ</a>
+    </div>
   </div>
 </footer>
 
@@ -304,16 +370,40 @@ function updateProgress(){
   document.getElementById('prog').textContent=done+' / '+items.length+' done';
 }
 </script>
+
 <script>
 (function(){
-  var b=document.getElementById('burger'),m=document.getElementById('mobMenu');
-  if(!b||!m)return;
-  function openM(){m.classList.add('is-open');b.classList.add('open');document.body.style.overflow='hidden'}
-  function closeM(){m.classList.remove('is-open');b.classList.remove('open');document.body.style.overflow=''}
-  b.addEventListener('click',function(e){e.stopPropagation();m.classList.contains('is-open')?closeM():openM()});
-  document.addEventListener('click',function(e){if(m.classList.contains('is-open')&&!m.contains(e.target)&&!b.contains(e.target))closeM()});
-  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
+  var burger = document.getElementById('burger');
+  var mobMenu = document.getElementById('mobMenu');
+  if(!burger || !mobMenu) return;
+
+  function openMob(){
+    mobMenu.classList.add('is-open');
+    burger.setAttribute('aria-label','Close menu');
+    document.body.style.overflow='hidden';
+  }
+  function closeMob(){
+    mobMenu.classList.remove('is-open');
+    burger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow='';
+  }
+  function toggleMob(){
+    if(mobMenu.classList.contains('is-open')) closeMob();
+    else openMob();
+  }
+
+  burger.addEventListener('click', function(e){
+    e.stopPropagation();
+    toggleMob();
+  });
+
+  document.addEventListener('click', function(e){
+    if(mobMenu.classList.contains('is-open') && !mobMenu.contains(e.target) && e.target !== burger){
+      closeMob();
+    }
+  });
 })();
 </script>
+
 </body>
 </html>
